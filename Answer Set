@@ -1,0 +1,67 @@
+PROBLEM 1 (4 pts)
+
+def main():
+  filepath = 'CO-OPS__8729108__wl.csv'
+  maxiumum = 0
+  with open( 'CO-OPS__8729108__wl.csv', 'r') as fp:
+      for line un fp:
+        line_columns = line.split(",")
+       # print (line_columns)
+        try:
+          next_item = float(line_columns[1])
+     except:
+          continue
+     if next_item > maximum:
+          maximum = next_item
+          date = line_columns[0]
+   print(maximum, date)
+   
+   main()
+   
+   
+PROBLEM 2 (4 pts)
+
+import pandas as pd
+
+df = pd.read_csv('CO-OPS__8729108__wl.csv')
+
+df.loc[df[ 'Water Level'].idxmax()]
+
+
+PROBLEM 3 (4 pts)
+
+##
+  maximum = 0
+  previous_line = 0
+  maxdiff = 0
+  with open('CO-OPS__8729108__wl.csv', 'r') as fp:
+      for line in fp:
+          line_columns = line.split(",")
+          
+          # print (line_columns)
+            try:
+                next_item = float(line_columns[1])
+                
+            except:
+              continue
+            if next_item > maximum:
+                maximum = next_item
+                date = line_columns[0]
+                
+            diff = previous_line - next_item
+            
+            if diff > maxdiff:
+              maxdiff = diff
+              datemax= line_columns[0]
+            previous_line = next_item
+            
+   print(maximum, date)
+   print(maxdiff, datemax)
+   
+  
+  PROBLEM 4 (4 pts)
+  UNDERGRAD
+  
+  
+  PROBLEM 5 (4 pts)
+  PEER REVIEW
